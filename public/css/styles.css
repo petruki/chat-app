@@ -190,7 +190,7 @@ button:disabled {
     padding: 12px 24px 0 24px;
 }
 
-.room-selection {
+.room-options {
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -198,6 +198,13 @@ button:disabled {
     
     justify-content: center;
     align-items: center;
+}
+
+.room-selection {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color:#777;
 }
 
 .switch {

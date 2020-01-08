@@ -33,12 +33,16 @@ $createOrJoin.addEventListener('click', () => {
 const toggleCreateJoin = () => {
     if (createOrJoin) {
         $inputRoomName.style.display = "none"
-        inputRoomName.name = "empty"
+        $inputRoomName.name = ""
+
         $rooms.style.display = "block"
+        $rooms.name = "room"
     } else {
         $inputRoomName.style.display = "block"
-        inputRoomName.name = "room"
+        $inputRoomName.name = "room"
+
         $rooms.style.display = "none"
+        $rooms.name = ""
     }
     $rooms.toggleAttribute("required")
     $inputRoomName.toggleAttribute("required")
