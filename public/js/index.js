@@ -10,29 +10,36 @@ const $inputRoomName = document.querySelector('#inputRoomName')
 socket.emit('getRooms', (rooms) => {
     if (!rooms.length) {
         $rooms.style.display = "none"
-        $createOrJoin.style.display = "none"
         $roomSelecionDiv.style.display = "none"
+    } else {
+        $rooms.style.display = !createOrJoin ? "block" : "none"
     }
 
     for (var i = 0; i < rooms.length; i++) {
-        var room = rooms[i];
+        var room = rooms[i]
 
-        var listItem = document.createElement("option");
-        listItem.textContent = room;
+        var listItem = document.createElement("option")
+        listItem.textContent = room
 
-        $rooms.appendChild(listItem);
+        $rooms.appendChild(listItem)
     }
 })
 
 $createOrJoin.addEventListener('click', () => {
+    toggleCreateJoin()
+    createOrJoin = !createOrJoin
+})
+
+const toggleCreateJoin = () => {
     if (createOrJoin) {
         $inputRoomName.style.display = "none"
+        inputRoomName.name = "empty"
         $rooms.style.display = "block"
-        createOrJoin = false
     } else {
         $inputRoomName.style.display = "block"
+        inputRoomName.name = "room"
         $rooms.style.display = "none"
-        createOrJoin = true
     }
-
-})
+    $rooms.toggleAttribute("required")
+    $inputRoomName.toggleAttribute("required")
+}
