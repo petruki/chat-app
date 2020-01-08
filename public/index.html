@@ -4,6 +4,7 @@
         <title>Chat App</title>
         <link rel="icon" href="/img/favicon.png">
         <link rel="stylesheet" href="/css/styles.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
     </head>
     <body>
         <div class="centered-form">
@@ -13,10 +14,21 @@
                     <label>Display name</label>
                     <input type="text" name="username" placeholder="Display name" required>
                     <label>Room</label>
-                    <input type="text" name="room" placeholder="Room" required>
+                    <div id="roomSelecionDiv" class="room-selection">
+                        <label class="switch">
+                            <input id="createOrJoin" type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <label id="labelCreateOrJoin" style="padding-left: 10px">Join or Create</label>
+                    </div>
+                    <input id="inputRoomName" type="text" name="room" placeholder="Create Room" required>
+                    <select id="rooms"></select>
                     <button>Join</button>
                 </form>
             </div>
         </div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/index.js"></script>
     </body>
 </html>
