@@ -66,6 +66,9 @@ socket.on('roomData', ({ room, users }) => {
         users
     })
     document.querySelector('#sidebar').innerHTML = html
+    document.querySelector('#leave-chat').addEventListener('click', () => {
+        location.href = '/'
+    })
 })
 
 document.querySelector('#message-form').addEventListener('submit', (e) => {
