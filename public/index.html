@@ -15,7 +15,7 @@
                 <h1>Join</h1>
                 <form action="/chat.html">
                     <label>Display name</label>
-                    <input type="text" name="username" placeholder="Display name" required>
+                    <input type="text" name="username" placeholder="Display name" autocomplete="off" required>
                     <label>Room</label>
                     <div id="roomSelecionDiv" class="room-options">
                         <label class="switch">
@@ -27,7 +27,7 @@
                         </label>
                     </div>
                     <div id="inputs">
-                        <input id="inputRoomName" type="text" name="room" placeholder="Create Room" required>
+                        <input id="inputRoomName" type="text" name="room" placeholder="Create Room" autocomplete="off" required>
                         <select id="rooms" class="room-selection" type="text" name="room"></select>
                     </div>
                     <button>Join</button>
