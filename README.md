@@ -7,6 +7,7 @@ Simple Node.js Chat App using Socket.io and Express
 ## Usage
 
 npm install
+
 npm run dev
 
 ## Credits
